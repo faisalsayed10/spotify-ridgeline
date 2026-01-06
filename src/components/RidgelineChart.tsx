@@ -54,14 +54,14 @@ export default function RidgelineChart({ data, title }: RidgelineChartProps) {
       .attr("viewBox", `0 0 ${width} ${height}`)
       .style("max-width", "100%")
       .style("height", "auto")
-      .style("font-family", "var(--font-tiktok-sans), 'TikTok Sans', sans-serif");
+      .style("font-family", "var(--font-poppins), 'Poppins', sans-serif");
 
     const defs = svg.append("defs");
 
     // Colors - teal at bottom, orange/yellow at top
     const baseColor = "#96C9D6";
     const peakColor = "#FFB804";
-    const borderColor = "#B4A996";
+    const borderColor = "#000000";
 
     // Single vertical gradient - bottom to top
     const areaGradient = defs

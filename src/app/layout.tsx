@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { TikTok_Sans } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const tiktokSans = TikTok_Sans({
-  variable: "--font-tiktok-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${tiktokSans.variable} ${tiktokSans.className} antialiased`}>
+      <body className={`${poppins.variable} ${poppins.className} antialiased`}>
         {children}
       </body>
     </html>
