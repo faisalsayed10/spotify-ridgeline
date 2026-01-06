@@ -44,7 +44,7 @@ export default function RidgelineChart({ data, title }: RidgelineChartProps) {
 
     const margin = { top: 50, right: 50, bottom: 50, left: leftMargin };
     const width = leftMargin + 750; // Chart area stays consistent
-    const rowSpacing = 26;
+    const rowSpacing = 22;
     const peakHeight = 50;
     const height = margin.top + margin.bottom + data.items.length * rowSpacing + peakHeight;
 
@@ -58,9 +58,10 @@ export default function RidgelineChart({ data, title }: RidgelineChartProps) {
 
     const defs = svg.append("defs");
 
-    // Colors - teal at bottom, orange at top
-    const baseColor = "#7ec8c8";
-    const peakColor = "#e9a137";
+    // Colors - teal at bottom, orange/yellow at top
+    const baseColor = "#96C9D6";
+    const peakColor = "#FFB804";
+    const borderColor = "#B4A996";
 
     // Single vertical gradient - bottom to top
     const areaGradient = defs
@@ -110,9 +111,9 @@ export default function RidgelineChart({ data, title }: RidgelineChartProps) {
         .attr("x2", width - margin.right)
         .attr("y1", baselineY)
         .attr("y2", baselineY)
-        .attr("stroke", baseColor)
+        .attr("stroke", borderColor)
         .attr("stroke-width", 0.5)
-        .attr("opacity", 0.2);
+        .attr("opacity", 0.3);
 
       // Area fill with subtle border
       svg
@@ -120,7 +121,7 @@ export default function RidgelineChart({ data, title }: RidgelineChartProps) {
         .datum(item.data)
         .attr("d", area)
         .attr("fill", "url(#area-gradient)")
-        .attr("stroke", baseColor)
+        .attr("stroke", borderColor)
         .attr("stroke-width", 0.5)
         .attr("opacity", 0.92);
 
